@@ -14,6 +14,12 @@ class Snippet(models.Model):
     language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
     style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
 
+    def __str__(self):
+        return f'{self.code} - title'
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        
     class Meta:
         ordering = ['created']
 
