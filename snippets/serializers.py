@@ -28,6 +28,9 @@ Using serializers.Serializers is encouraged for when you want to explicitly decl
 
 #         return instance
 
+"""
+serializer.ModelSerializer makes it easier to serialize your models. You write less code with it
+"""
 class SnippetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Snippet
