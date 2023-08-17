@@ -6,7 +6,7 @@ from .models import Snippet
 from .serializers import SnippetSerializer
 
 @api_view(['GET','POST'])
-def snippet_list(request):
+def snippet_list(request, format=None):
     """
     List all code snippets or add a new snippet
     """
@@ -24,7 +24,7 @@ def snippet_list(request):
     
 
 @api_view(['GET','PUT','DELETE'])
-def snippet_detail(request,pk):
+def snippet_detail(request,pk, formart=None):
     """
     retrieve, update or delete a snippet
     """
@@ -48,3 +48,4 @@ def snippet_detail(request,pk):
     elif request.method == 'DELETE':
         snippet.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
