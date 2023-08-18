@@ -1,5 +1,5 @@
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view # we use @api_view decorators for function based views
 from rest_framework.response import Response
 
 from .models import Snippet
